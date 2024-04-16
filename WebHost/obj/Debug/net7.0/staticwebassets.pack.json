@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\C6\\NguyenTuanVinh_PH15949\\WebHost\\wwwroot\\uploads\\41456635-596a-4d8c-bf4c-c0ccc4f33a72_Anh-Avatar-doi-19.jpg",
+      "PackagePath": "staticwebassets\\uploads\\41456635-596a-4d8c-bf4c-c0ccc4f33a72_Anh-Avatar-doi-19.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\C6\\NguyenTuanVinh_PH15949\\WebHost\\wwwroot\\uploads\\77e24929-66f1-4455-8b07-bff31eff2ad9_Anh-Avatar-doi-19.jpg",
+      "PackagePath": "staticwebassets\\uploads\\77e24929-66f1-4455-8b07-bff31eff2ad9_Anh-Avatar-doi-19.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\C6\\NguyenTuanVinh_PH15949\\WebHost\\wwwroot\\uploads\\85272a5d-47d7-43bc-8831-5f91898e3348_Anh-Avatar-doi-19.jpg",
+      "PackagePath": "staticwebassets\\uploads\\85272a5d-47d7-43bc-8831-5f91898e3348_Anh-Avatar-doi-19.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.WebHost.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.WebHost.props",
+      "PackagePath": "build\\WebHost.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.WebHost.props",
+      "PackagePath": "buildMultiTargeting\\WebHost.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.WebHost.props",
+      "PackagePath": "buildTransitive\\WebHost.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

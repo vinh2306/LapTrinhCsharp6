@@ -1,0 +1,31 @@
+﻿@page "/edit/{id:int}"
+@using WebDomain.Entities
+@using BlazorServer.Service
+@inject ProductService _service
+
+<h3>Edit Model</h3>
+    <div>
+        <input @bind="product.Name" />
+        <input @bind="product.Code" />
+        <input @bind="product.Price" type="number" step="1" />
+        <button @onclick="SaveChanges">Save</button>
+    </div>
+@code {
+    [Inject]
+    private NavigationManager NavigationManager { get; set; }
+    [Parameter]
+    public int id { get; set; }
+
+    ProductEntity product = new ProductEntity();
+
+    protected override async Task OnInitializedAsync()
+    {
+        product = await _service.GetById(id);
+
+    }
+    private async Task SaveChanges()
+    {
+        await _service.CreateOrEdit(product);
+        NavigationManager.NavigateTo("/product");
+    }
+}

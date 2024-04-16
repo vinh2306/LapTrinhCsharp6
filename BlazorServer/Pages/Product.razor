@@ -1,0 +1,65 @@
+﻿@page "/product"
+@using BlazorServer.Service
+@using WebDomain.Entities
+@inject ProductService _service
+
+<h3>Product</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mã</th>
+            <th>Tên</th>
+            <th>Giá</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var model in ProductEntitys)
+        {
+            <tr>
+                <td>@model.Code</td>
+                <td>@model.Name</td>
+                <td>@model.Price</td>
+                <td>
+                    <button @onclick="() => Edit(model.Id)">Edit</button>
+                    <button @onclick="() => Delete(model.Id)">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<h3>Create</h3>
+<div>
+    <input @bind="product.Code"></input>
+    <input @bind="product.Name"></input>
+    <input @bind="product.Price"></input>
+    <button @onclick="Create">Create</button>
+</div>
+@code{
+    [Inject]
+    private NavigationManager NavigationManager {get;set;}
+    List<ProductEntity> ProductEntitys = new List<ProductEntity>();
+    ProductEntity product = new ProductEntity();
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadData();
+    }
+    private async Task LoadData()
+    {
+        ProductEntitys = await _service.GetAll();
+    }
+    private void Edit(int id)
+    {
+        NavigationManager.NavigateTo($"/edit/{id}");
+    }
+    private async Task Delete(int id)
+    {
+        await _service.Delete(id);
+        await LoadData();
+    }
+    private async Task Create()
+    {
+        await _service.CreateOrEdit(product);
+        await LoadData();
+    }
+}
